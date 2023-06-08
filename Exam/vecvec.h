@@ -1,8 +1,8 @@
 #pragma once
 
-#include "iostream"
-#include "stdlib.h"
-#include "stdio.h"
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -171,4 +171,6 @@ public:
 		delete[] ptr_arr;
 		ptr_arr = new_ptr_arr;
 	}
+
+	friend ostream& operator<<(ostream& out_stream, const vecvec<T>& right);
 };

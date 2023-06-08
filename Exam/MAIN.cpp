@@ -1,10 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string>
-#include <iomanip>
-#include <vector>
 
 #include"vecvec.h"
 
@@ -15,7 +13,7 @@ ostream& operator<<(ostream& out_stream, const vecvec<T>& right) //выводим в вид
 {
 	for (int i = 0; i < right.get_first_layer_size(); ++i)
 	{
-		for (int j = 0; j < right.get_second_layer_size(i); ++j) cout << right[i][j] << " ";
+		for (int j = 0; j < right.get_second_layer_size(i); ++j) cout << right.ptr_arr[i][j] << " ";
 	}
 	cout << endl;
 
@@ -32,12 +30,14 @@ istream& operator>>(istream& in_stream, vecvec<T>& right)
 	return in_stream;
 }
 
-void main()
+int main()
 {
-	vecvec<int> test;
+	vecvec<int> test = vecvec<int>();
 	test.push_back(0, 34);
 	test.push_back(0, 456);
 	test.push_back(0, 82);
 
 	cout << test;
+
+	return 0;
 }
